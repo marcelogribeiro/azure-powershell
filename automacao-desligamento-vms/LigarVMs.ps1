@@ -9,7 +9,7 @@
     foreach($VM in $VMs){
         Write-Output "Ligando maquina virtual: $($VM.Name)"
 
-        $Result = Start-AzureRmVM -Name $VM.Name -ResourceGroupName $VM.ResourceGroupName -Force -ErrorAction Continue
+        $Result = Start-AzureRmVM -Name $VM.Name -ResourceGroupName $VM.ResourceGroupName -ErrorAction Continue
         
         if($Result.IsSuccessStatusCode) {
             Write-Output "Maquina virtual $($VM.Name) ligada com sucesso."
